@@ -107,13 +107,11 @@ function getPasswordOptions() {
   passwordLength = prompt('Choose the size of Password between 8 to 64 characters: ')
 
   if (isNaN(passwordLength)) { 
-    alert('Input only numbers. ' + 'Try again!')
+    alert('Input only numbers. ' + 'Reload & try again!')
     reload()
-    return
   } else if (passwordLength < 8 || passwordLength > 64) { 
-    alert('Password length should be between 8 to 64 characters. ' + 'Try again!')
+    alert('Password length should be between 8 to 64 characters. ' + 'Reload & try again!')
     reload()
-    return
   } else {
     alert('Choose from below character types: Lowercase, Uppercase, Numeric or Special Characters')
   }
@@ -142,6 +140,9 @@ function getPasswordOptions() {
     passwordCharacters += specialCharacters
   }
   
+  if (passwordCharacters == 0 || passwordCharacters == null) {
+    alert('Alteast one character types have to be chosen. ' + 'Refresh & try again!')
+  }
 }
 
 getPasswordOptions()
