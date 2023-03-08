@@ -88,44 +88,92 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+//Get user input of password length and parse into integer from string
+let passwordLength = parseInt()
+
+let lowercaseOption
+
+let uppercaseOption
+
+let numericOption
+
+let specialCharOption
+
+let passwordCharacters = []
 
 // Function to prompt user for password options
 function getPasswordOptions() {
 
-  let passLength = prompt('Choose the size of Password between 8 to 64 characters: ')
+  passwordLength = prompt('Choose the size of Password between 8 to 64 characters: ')
 
-  if (isNaN(passLength)) { 
-    alert('Input only numbers. ' + 'Refresh the page to try again!')
+  if (isNaN(passwordLength)) { 
+    alert('Input only numbers. ' + 'Try again!')
     reload()
     return
-  } else if (passLength < 8 || passLength > 64) { 
-    alert('Password length should be between 8 to 64 characters. ' + 'Refresh the page to try again!')
+  } else if (passwordLength < 8 || passwordLength > 64) { 
+    alert('Password length should be between 8 to 64 characters. ' + 'Try again!')
     reload()
     return
   } else {
+    alert('Choose from below character types: Lowercase, Uppercase, Numeric or Special Characters')
+  }
 
-    let specialChar = prompt('Choose from below character types: Lowercase(L), Uppercase(U), Numeric(N) or Special Characters(S)')
-  
+  lowercaseOption = confirm('Do you wish to include lowercase in your password?')
+
+  if (lowercaseOption) {
+    passwordCharacters += lowerCasedCharacters
+  }
+
+  uppercaseOption = confirm('Do you wish to include uppercase in your password?')
+
+  if (lowercaseOption) {
+    passwordCharacters += upperCasedCharacters
+  }
+
+  numericOption = confirm('Do you wish to include numbers in your password?')
+
+  if (lowercaseOption) {
+    passwordCharacters += numericCharacters
+  }
+
+  specialCharOption = confirm('Do you wish to include special characters in your password?')
+
+  if (lowercaseOption) {
+    passwordCharacters += specialCharacters
   }
   
 }
 
 getPasswordOptions()
 
+//Removing "," in passwordCharacters
 
+let cleanPasswordChars = passwordCharacters.replace(/\,/g, '');
 
 // Function for getting a random element from an array
-function getRandom(arr) {
+function getRandom(length) {
 
-  
-  // let password = 
+  let result = ' ';
+  const passLength = cleanPasswordChars.length;
+  for (i = 0; i < length; i++ ) {
+      result += cleanPasswordChars.charAt(Math.floor(Math.random() * passLength));
+  }
+
+  return result;
 
 }
+
+getRandom(passwordLength)
+
 
 // Function to generate password with user input
 function generatePassword() {
 
+  let password = getRandom()
+
 }
+
+generatePassword()
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
