@@ -91,6 +91,8 @@ var upperCasedCharacters = [
 //Get user input of password length and parse into integer from string
 let passwordLength = parseInt()
 
+//Containers to store user options and add them in one container in the end
+
 let lowercaseOption
 
 let uppercaseOption
@@ -99,6 +101,7 @@ let numericOption
 
 let specialCharOption
 
+//Add the characters using user options
 let passwordCharacters = []
 
 // Function to prompt user for password options
