@@ -88,13 +88,37 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+
 // Function to prompt user for password options
 function getPasswordOptions() {
 
+  let passLength = prompt('Choose the size of Password between 8 to 64 characters: ')
+
+  if (isNaN(passLength)) { 
+    alert('Input only numbers. ' + 'Refresh the page to try again!')
+    reload()
+    return
+  } else if (passLength < 8 || passLength > 64) { 
+    alert('Password length should be between 8 to 64 characters. ' + 'Refresh the page to try again!')
+    reload()
+    return
+  } else {
+
+    let specialChar = prompt('Choose from below character types: Lowercase(L), Uppercase(U), Numeric(N) or Special Characters(S)')
+  
+  }
+  
 }
+
+getPasswordOptions()
+
+
 
 // Function for getting a random element from an array
 function getRandom(arr) {
+
+  
+  // let password = 
 
 }
 
