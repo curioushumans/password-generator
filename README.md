@@ -6,6 +6,9 @@ This application can be used to generate a random password based on user promts.
 
 ### URL
 
+https://curioushumans.github.io/password-generator/
+
+
 ### Screenshot
 
 The following image shows the web application's appearance and functionality:
