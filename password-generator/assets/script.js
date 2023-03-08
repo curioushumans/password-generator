@@ -169,11 +169,11 @@ getRandom(passwordLength)
 // Function to generate password with user input
 function generatePassword() {
 
-  let password = getRandom()
+  let password = getRandom(passwordLength)
+
+  return password
 
 }
-
-generatePassword()
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
