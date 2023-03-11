@@ -107,13 +107,13 @@ let passwordCharacters = []
 // Function to prompt user for password options
 function getPasswordOptions() {
 
-  passwordLength = prompt('Choose the size of Password between 8 to 64 characters: ')
+  passwordLength = prompt('Choose the size of Password between 8 to 128 characters: ')
 
   if (isNaN(passwordLength)) { 
     alert('Input only numbers. ' + 'Reload & try again!')
     reload()
-  } else if (passwordLength < 8 || passwordLength > 64) { 
-    alert('Password length should be between 8 to 64 characters. ' + 'Reload & try again!')
+  } else if (passwordLength < 8 || passwordLength > 128) { 
+    alert('Password length should be between 8 to 128 characters. ' + 'Reload & try again!')
     reload()
   } else {
     alert('Choose from below character types: Lowercase, Uppercase, Numeric or Special Characters')
@@ -143,7 +143,7 @@ function getPasswordOptions() {
     passwordCharacters += specialCharacters
   }
   
-  if (passwordCharacters == 0 || passwordCharacters == null) {
+  if (passwordCharacters == 0) {
     alert('Alteast one character types have to be chosen. ' + 'Refresh & try again!')
   }
 
