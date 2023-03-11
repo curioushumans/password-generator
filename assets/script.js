@@ -127,25 +127,26 @@ function getPasswordOptions() {
 
   uppercaseOption = confirm('Do you wish to include uppercase in your password?')
 
-  if (lowercaseOption) {
+  if (uppercaseOption) {
     passwordCharacters += upperCasedCharacters
   }
 
   numericOption = confirm('Do you wish to include numbers in your password?')
 
-  if (lowercaseOption) {
+  if (numericOption) {
     passwordCharacters += numericCharacters
   }
 
   specialCharOption = confirm('Do you wish to include special characters in your password?')
 
-  if (lowercaseOption) {
+  if (specialCharOption) {
     passwordCharacters += specialCharacters
   }
   
   if (passwordCharacters == 0 || passwordCharacters == null) {
     alert('Alteast one character types have to be chosen. ' + 'Refresh & try again!')
   }
+
 }
 
 getPasswordOptions()
